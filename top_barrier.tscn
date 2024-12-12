@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0b75kf8rj7um"]
+
+[ext_resource type="Script" path="res://top_barrier.gd" id="1_8pcit"]
+[ext_resource type="Texture2D" uid="uid://br01cyeg4ujxr" path="res://icon.svg" id="2_o01j6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ph5ih"]
+size = Vector2(73, 497)
+
+[node name="TopBarrier" type="Area2D"]
+script = ExtResource("1_8pcit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.05176e-05, -0.500168)
+shape = SubResource("RectangleShape2D_ph5ih")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.499969, -0.500153)
+scale = Vector2(0.570312, 3.88281)
+texture = ExtResource("2_o01j6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

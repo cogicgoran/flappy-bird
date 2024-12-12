@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1yx7pgrhbquy"]
+
+[ext_resource type="Script" path="res://area_exit_point.gd" id="1_5ttf1"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_aoptl"]
+b = Vector2(0, 649)
+
+[node name="AreaExitPoint" type="Area2D"]
+script = ExtResource("1_5ttf1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_aoptl")
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
